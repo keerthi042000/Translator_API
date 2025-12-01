@@ -45,4 +45,4 @@ jobs:
           --name ${{ secrets.CONTAINER_APP_NAME }} \
           --resource-group ${{ secrets.RESOURCE_GROUP }} \
           --image ${{ secrets.ACR_LOGIN_SERVER }}/translator-app:latest \
-          --env-vars HF_TOKEN=${{ secrets.HF_TOKEN }}
+          --set-env-vars HF_TOKEN=${{ secrets.HF_TOKEN }}

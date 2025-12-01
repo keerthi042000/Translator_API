@@ -43,7 +43,7 @@ custom_theme = gr.themes.Default().set(
 
 # Create the Gradio interface
 with gr.Blocks() as demo:
-    gr.Markdown("# Multilingual Text Translator")
+    gr.Markdown("# Multilingual Text Translator Automated Deployment")
 
 
     lang_map = {

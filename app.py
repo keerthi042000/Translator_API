@@ -9,6 +9,8 @@ client = InferenceClient(
     api_key=HF_TOKEN
 )
 
+port = int(os.environ.get("PORT", 7860))
+
 def translate_text(text, src_lang, tgt_lang):
     """
     Function to handle translation using the MBART model
@@ -40,7 +42,7 @@ custom_theme = gr.themes.Default().set(
 
 
 # Create the Gradio interface
-with gr.Blocks(theme=custom_theme) as demo:
+with gr.Blocks() as demo:
     gr.Markdown("# Multilingual Text Translator")
 
 
@@ -144,4 +146,5 @@ with gr.Blocks(theme=custom_theme) as demo:
 
 # Launch the interface
 if __name__ == "__main__":
-    demo.launch(share=True)
+    # demo.launch(share=True)
+    demo.launch(server_name="0.0.0.0", server_port=port)
